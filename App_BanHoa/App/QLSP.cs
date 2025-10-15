@@ -104,7 +104,7 @@ namespace App
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
-        
+
         {
             if (dgvFlowers.SelectedRows.Count == 0)
             {
@@ -152,7 +152,8 @@ namespace App
                 MoTa = txtDescribe.Text
             };
 
-            if(hoaBUS.InsertDataFlower(flowers))
+
+            if (hoaBUS.InsertDataFlower(flowers))
             {
                 MessageBox.Show("Sửa thông tin hoa thành công", "Thông báo", MessageBoxButtons.OK);
                 DataTable dt = hoaBUS.LoadDataFlower();
@@ -164,13 +165,14 @@ namespace App
             }
         }
 
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             HoaDTO flower = new HoaDTO { TenHoa = txtSearch.Text };
             DataTable dt = hoaBUS.ValidateSearch(flower);
-           
 
-            if(dt.Rows.Count==0)
+
+            if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("Không có hoa bạn cần tìm", "Thông báo", MessageBoxButtons.OK);
                 return;

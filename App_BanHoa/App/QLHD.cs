@@ -89,6 +89,7 @@ namespace App
         {
             if (dgvBill.CurrentRow != null)
             {
+
                 int MaHD = Convert.ToInt32(dgvBill.CurrentRow.Cells["MaHD"].Value);
                 HDBanDTO hDBanDTO = new HDBanDTO { MaHD = MaHD };
                 if (HDBUS.ValidatecancelHDBan(hDBanDTO))
@@ -102,6 +103,7 @@ namespace App
                 }
             }
             else
+
             {
                 MessageBox.Show("Vui lòng chọn hóa đơn để hủy");
             }
