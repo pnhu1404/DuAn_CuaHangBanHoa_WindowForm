@@ -238,6 +238,7 @@ ClientBin/
 *.jfm
 *.pfx
 *.publishsettings
+
 orleans.codegen.cs
 
 # Including strong name files can present a security risk
@@ -272,7 +273,9 @@ ServiceFabricBackup/
 *.bim_*.settings
 *.rptproj.rsuser
 *- [Bb]ackup.rdl
+
 *- [Bb]ackup ([0-9]).rdl
+
 *- [Bb]ackup ([0-9][0-9]).rdl
 
 # Microsoft Fakes
@@ -285,6 +288,7 @@ FakesAssemblies/
 .ntvs_analysis.dat
 node_modules/
 
+
 # Visual Studio 6 build log
 *.plg
 
@@ -296,14 +300,17 @@ node_modules/
 
 # Visual Studio LightSwitch build output
 **/*.HTMLClient/GeneratedArtifacts
+
 **/*.DesktopClient/GeneratedArtifacts
 **/*.DesktopClient/ModelManifest.xml
+
 **/*.Server/GeneratedArtifacts
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
 
 # Paket dependency manager
 .paket/paket.exe
+
 paket-files/
 
 # FAKE - F# Make
@@ -323,6 +330,7 @@ __pycache__/
 # Tabs Studio
 *.tss
 
+
 # Telerik's JustMock configuration file
 *.jmconfig
 
@@ -337,6 +345,7 @@ OpenCover/
 
 # Azure Stream Analytics local run output
 ASALocalRun/
+
 
 # MSBuild Binary and Structured Log
 *.binlog
