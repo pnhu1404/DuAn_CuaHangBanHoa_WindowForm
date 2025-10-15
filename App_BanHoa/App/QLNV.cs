@@ -17,6 +17,7 @@ namespace App
         private UserBUS userBUS = new UserBUS();
         public QLNV()
         {
+
             InitializeComponent();
             dgvNV.AllowUserToAddRows = false;
         }
@@ -28,6 +29,8 @@ namespace App
             dgvNV.DataSource = dt;
             btnReset_Click(sender, e);
 
+
+
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -37,6 +40,7 @@ namespace App
             {
                 this.Close();
             }
+
         }
 
         private void dgvNV_SelectionChanged(object sender, EventArgs e)
@@ -51,6 +55,7 @@ namespace App
             txtDiachi.Text = dgvNV.CurrentRow.Cells["DiaChi"].Value.ToString();
             txtEmail.Text = dgvNV.CurrentRow.Cells["Email"].Value.ToString();
             txtSdt.Text = dgvNV.CurrentRow.Cells["SoDienThoai"].Value.ToString();
+            
             if (dgvNV.CurrentRow.Cells["GioiTinh"].Value.ToString() == "Nam")
             {
                 rNam.Checked = true;
