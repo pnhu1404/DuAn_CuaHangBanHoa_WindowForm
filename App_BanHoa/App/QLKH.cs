@@ -45,10 +45,12 @@ namespace App
             txtCC.Text = dgvInvoice.CurrentRow.Cells["MaKH"].Value.ToString();
             txtCN.Text = dgvInvoice.CurrentRow.Cells["TenKH"].Value.ToString();
             txtNP.Text = dgvInvoice.CurrentRow.Cells["SDT"].Value.ToString();
+
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+
             dgvInvoice.ClearSelection();
             txtCC.Text = "";
             txtCN.Text = "";
@@ -89,7 +91,6 @@ namespace App
                 TenKH = txtCN.Text,
                 SDT = txtNP.Text
             };
-
             if(KHBUS.ValidateAddKH(khDTO))
             {
                 MessageBox.Show("Thêm khách hàng thành công", "Thông báo", MessageBoxButtons.OK);
