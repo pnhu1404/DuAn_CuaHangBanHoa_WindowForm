@@ -104,6 +104,7 @@ namespace App
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
+        
         {
             if (dgvFlowers.SelectedRows.Count == 0)
             {
@@ -112,6 +113,7 @@ namespace App
             }
             HoaDTO flowers = new HoaDTO()
             {
+
                 MaHoa = Convert.ToInt32(txtIdFl.Text)
             };
 
@@ -121,6 +123,7 @@ namespace App
             }
             else
             {
+
                 MessageBox.Show("Hủy hoa không thành công", "Thông báo", MessageBoxButtons.OK);
             }
 
