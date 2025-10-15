@@ -141,7 +141,7 @@ namespace BUS
         }
         public DataTable LoadDataHDBan()
         {
-            return hdDAO.LoadHD();
+            return hdDAO.GetHD_DataTable_Mock();
         }
         public bool ValidatecancelHDBan(HDBanDTO hd)
         {
