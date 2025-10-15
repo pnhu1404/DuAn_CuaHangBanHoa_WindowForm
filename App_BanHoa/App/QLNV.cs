@@ -53,9 +53,10 @@ namespace App
             txtHoten.Text = dgvNV.CurrentRow.Cells["TenNV"].Value.ToString();
             txtQuyenhan.Text = dgvNV.CurrentRow.Cells["QuyenHan"].Value.ToString();
             txtDiachi.Text = dgvNV.CurrentRow.Cells["DiaChi"].Value.ToString();
+            
             txtEmail.Text = dgvNV.CurrentRow.Cells["Email"].Value.ToString();
             txtSdt.Text = dgvNV.CurrentRow.Cells["SoDienThoai"].Value.ToString();
-            
+
             if (dgvNV.CurrentRow.Cells["GioiTinh"].Value.ToString() == "Nam")
             {
                 rNam.Checked = true;
@@ -71,6 +72,7 @@ namespace App
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+
             dgvNV.ClearSelection();
             if(dgvNV.CurrentRow.Selected == false)
             {
@@ -97,6 +99,7 @@ namespace App
                 return;
             }
                 
+
             UserDTO user = new UserDTO
             {
                 TenNV = txtHoten.Text,
@@ -125,6 +128,7 @@ namespace App
                 dgvNV.DataSource = dt;
                 btnReset_Click(sender, e);
             }
+
             else
             {
                 MessageBox.Show("Sửa thông tin nhân viên thất bại", "Thông báo", MessageBoxButtons.OK);
