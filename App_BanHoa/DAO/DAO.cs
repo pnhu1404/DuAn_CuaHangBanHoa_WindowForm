@@ -508,6 +508,54 @@ namespace DAO
     {
         //private string connectionString = "Data Source=DESKTOP-4EFMBF6;Initial Catalog=CuaHangHoa;Integrated Security=True;Encrypt=False";
         private string connectionString = "Data Source=NHU-PHAM\\SQLEXPRESS;Initial Catalog=CuaHangHoa;Integrated Security=True";
+        public DataTable GetHD_DataTable_Mock()
+        {
+            // 1. Khởi tạo DataTable và định nghĩa cấu trúc với tên cột mới
+            DataTable dt = new DataTable("DonHang");
+
+            // Định nghĩa các cột
+            dt.Columns.Add("MaDH", typeof(int));         // Mã Đơn Hàng (thay cho MaHD)
+            dt.Columns.Add("MaKH", typeof(int));
+            dt.Columns.Add("NgayDatHang", typeof(DateTime)); // Ngày Đặt Hàng (thay cho NgayBan)
+            dt.Columns.Add("TongTien", typeof(int));
+            dt.Columns.Add("TrangThai", typeof(string));
+
+            // 2. Tạo và thêm từng hàng (DataRow) dữ liệu ảo
+
+            // Hàng 1: Đã thanh toán
+            DataRow row1 = dt.NewRow();
+            row1["MaDH"] = 1001;
+            row1["MaKH"] = 501;
+            row1["NgayDatHang"] = new DateTime(2025, 10, 15);
+            row1["TongTien"] = 250000;
+            row1["TrangThai"] = "Đã thanh toán";
+            dt.Rows.Add(row1);
+
+            // Hàng 2: Chưa giao hàng
+            DataRow row2 = dt.NewRow();
+            row2["MaDH"] = 1002;
+            row2["MaKH"] = 502;
+            row2["NgayDatHang"] = new DateTime(2025, 10, 14, 15, 0, 0); // Có giờ
+            row2["TongTien"] = 550000;
+            row2["TrangThai"] = "Chưa giao hàng";
+            dt.Rows.Add(row2);
+
+            // Hàng 3: Đã hủy
+            DataRow row3 = dt.NewRow();
+            row3["MaDH"] = 1003;
+            row3["MaKH"] = 503;
+            row3["NgayDatHang"] = new DateTime(2025, 10, 13);
+            row3["TongTien"] = 150000;
+            row3["TrangThai"] = "Đã hủy";
+            dt.Rows.Add(row3);
+
+            // Hàng 4: Hoàn thành (Dùng cú pháp ngắn hơn)
+            dt.Rows.Add(1004, 504, DateTime.Now.AddDays(-1), 800000, "Hoàn thành");
+
+            // 3. Trả về DataTable
+            return dt;
+        }
+
         public bool AddHD(HDBanDTO user)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
